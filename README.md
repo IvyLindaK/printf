@@ -1,1 +1,2 @@
+#!bin/bash
 Printf function
