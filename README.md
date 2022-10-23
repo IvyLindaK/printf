@@ -1,2 +1,2 @@
 #!/bin/bash
-Printf function
+This repository contains the printf function
