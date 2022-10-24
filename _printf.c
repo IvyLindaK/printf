@@ -41,5 +41,5 @@ int _printf(const char *format, ...)
 int main(void)
 {
 	_printf("My %c_ame is %s", 'n', "Travis\n");
-	_printf("%d\n", counter);
+	//_printf("%d\n", counter);
 }
