@@ -14,7 +14,7 @@
 
 int print_char(va_list arg_c)
 {
-	char *buff;
+	/*char *buff;*/
 	int x;
 
 	x = va_arg(arg_c, int);
