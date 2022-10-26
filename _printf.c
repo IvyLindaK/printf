@@ -38,8 +38,3 @@ int _printf(const char *format, ...)
 	counter = counter - 1;
 	return (counter);
 }
-int main(void)
-{
-	_printf("My %c_ame is %s", 'n', "Travis\n");
-	//_printf("%d\n", counter);
-}
