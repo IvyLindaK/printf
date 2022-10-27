@@ -17,26 +17,39 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 
 	va_start(args, format);
-	while (format[i] != '\0')
+	while (format && format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] != '%')
 		{
-			++i;
-			fp = format_check(&format[i]);
-			counter = counter + fp(args);
+			_putchar(format[i]);
+			counter++;
+			i++;
 			continue;
 		}
 		else
 		{
-			_putchar(format[i]);
-			counter++;
+			if (format[i + 1] == '%')
+			{
+				_putchar('%');
+				counter++;
+				i = i + 2;
+				continue;
+			}
+			else
+			{
+				fp = format_check(&format[i + 1]);
+				if (fp == NULL)
+					return (-1);
+				i = i + 2;
+				counter = counter + fp(args);
+				continue;
+			}
 		}
 		i++;
 	}
 	va_end(args);
-	counter = counter - 1;
 	return (counter);
 }
