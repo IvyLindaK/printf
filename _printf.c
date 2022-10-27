@@ -17,19 +17,24 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	while (format[i] != '\0')
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			fp = format_check(&format[i]);
+			if (fp == NULL)
+				return (-1);
 			counter = counter + fp(args);
+			i++;
 			continue;
 		}
 		else
 		{
 			_putchar(format[i]);
 			counter++;
+			i++;
+			continue;
 		}
 		i++;
 	}
