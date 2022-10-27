@@ -24,7 +24,6 @@ int _printf(const char *format, ...)
 			i++;
 			fp = format_check(&format[i]);
 			counter = counter + fp(args);
-			i++;
 			continue;
 		}
 		else
