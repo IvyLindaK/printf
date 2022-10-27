@@ -19,15 +19,17 @@ int _printf(const char *format, ...)
 	if(format == NULL)
 		return (1);
 
+	if (format == NULL)
+		return (0);
+
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			i++;
+			++i;
 			fp = format_check(&format[i]);
 			counter = counter + fp(args);
-			i++;
 			continue;
 		}
 		else
@@ -40,9 +42,4 @@ int _printf(const char *format, ...)
 	va_end(args);
 	counter = counter - 1;
 	return (counter);
-}
-int main(void)
-{
-	_printf("My %c_ame is %s", 'n', "Travis\n");
-	//_printf("%d\n", counter);
 }
