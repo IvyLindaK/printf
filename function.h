@@ -40,8 +40,8 @@ int print_str(va_list arg_str)
 
 	while (str_arg[x] != '\0')
 	{
-		x++;
 		_putchar(str_arg[x]);
+		x++;
 	}
 	return (1);
 }
