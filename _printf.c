@@ -39,12 +39,11 @@ int _printf(const char *format, ...)
 			else
 			{
 				fp = format_check(&format[i + 1]);
-				if (fp !== NULL)
-				{
+				if (fp == NULL)
+					return (-1);
 				i = i + 2;
 				counter = counter + fp(args);
 				continue;
-				}
 			}
 		}
 		i++;
