@@ -34,13 +34,14 @@ int print_str(va_list arg_str)
 	int x = 0;
 
 	if (str_arg == NULL)
-		return (-1);
+	{
+		str_arg = "(null)";
+	}
 
 	while (str_arg[x] != '\0')
 	{
 		x++;
 		_putchar(str_arg[x]);
-		return (1);
 	}
 	return (1);
 }
