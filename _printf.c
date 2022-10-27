@@ -16,12 +16,15 @@ int _printf(const char *format, ...)
 	int counter = 0, i = 0;
 	va_list args;
 
+	if (format == NULL)
+		return (0);
+
 	va_start(args, format);
 	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
-			i++;
+			++i;
 			fp = format_check(&format[i]);
 			if (fp == NULL)
 				return (-1);
