@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
+			++i;
 			fp = format_check(&format[i]);
 			counter = counter + fp(args);
 			continue;
